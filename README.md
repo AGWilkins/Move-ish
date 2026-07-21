@@ -1,2 +1,2 @@
-# Callesenics
-Callesenics. Small practice. Compounding effect. From the creators of Clarity Cycle
+# Movement Snacks
+Movement snacks. Small practice. Compounding effect. From the creators of Clarity Cycle
