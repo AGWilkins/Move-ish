@@ -451,7 +451,167 @@
         font-size:.84rem;
       }
     }
+/* ===== MOBILE TIGHTENING ===== */
 
+@media (max-width:650px) {
+
+  main {
+    padding-top:12px;
+    padding-bottom:60px;
+  }
+
+  .hero {
+    padding:12px 0 34px;
+  }
+
+  .hero-title {
+    margin:14px 0 18px;
+    font-size:10.4vw;
+    line-height:.91;
+    letter-spacing:-.07em;
+  }
+
+  .hero-title span {
+    display:block;
+    white-space:nowrap;
+  }
+
+  .hero p {
+    font-size:1.08rem;
+    line-height:1.48;
+  }
+
+  .duration-title {
+    margin-bottom:10px;
+  }
+
+  .durations {
+    gap:6px;
+    margin-bottom:14px;
+  }
+
+  .duration {
+    min-height:58px;
+    padding:8px 14px;
+    border-radius:16px;
+  }
+
+  .duration strong {
+    font-size:1.75rem;
+  }
+
+  .duration span {
+    max-width:210px;
+    font-size:.84rem;
+  }
+
+
+  /* PLAYER */
+
+  .player {
+    border-radius:26px;
+    padding:22px 20px;
+  }
+
+  .track-number {
+    margin-top:16px;
+    padding:5px 9px;
+  }
+
+  .player h2 {
+    margin:11px 0 7px;
+    font-size:2.45rem;
+    line-height:.91;
+  }
+
+  #trackThought {
+    min-height:0;
+    margin-bottom:0;
+    font-size:.96rem;
+  }
+
+  .progress-wrap {
+    margin:24px 0 9px;
+    height:6px;
+  }
+
+  .controls {
+    margin-top:20px;
+    gap:8px;
+  }
+
+  .play,
+  .skip {
+    padding:13px 16px;
+  }
+
+  .playlist {
+    margin-top:12px;
+    gap:0;
+  }
+
+  .playlist-row {
+    grid-template-columns:34px 1fr auto;
+    gap:9px;
+    padding:11px 0;
+  }
+
+  .playlist-title {
+    font-size:.95rem;
+  }
+
+  .playlist-type {
+    font-size:.72rem;
+  }
+
+
+  /* METHODOLOGY */
+
+  .manifesto {
+    padding:58px 0 15px;
+  }
+
+  .manifesto h2 {
+    margin:8px 0 22px;
+    font-size:2.65rem;
+    line-height:.94;
+  }
+
+  .rules {
+    margin-top:22px;
+    gap:8px;
+  }
+
+  .rule {
+    min-height:0;
+    padding:18px 18px 17px;
+    border-radius:18px;
+  }
+
+  .rule strong {
+    font-size:1.05rem;
+  }
+
+  .rule p {
+    margin-top:5px;
+    font-size:.95rem;
+  }
+
+  .quote {
+    margin-top:40px;
+    padding:30px 24px;
+    border-radius:24px;
+    font-size:2.75rem;
+  }
+
+  footer {
+    padding:42px 0 calc(30px + env(safe-area-inset-bottom));
+  }
+
+  .footer-row {
+    gap:12px;
+  }
+}
   </style>
 </head>
 
@@ -473,9 +633,10 @@
         Three songs. Nine minutes. That's plenty.
       </div>
 
-      <h1>
-        Move like nobody's watching.
-      </h1>
+     <h1 class="hero-title">
+  <span>Move like</span>
+  <span>nobody's watching.</span>
+</h1>
 
       <p>
         No workouts. No reps. No perfect form.
