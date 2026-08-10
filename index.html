@@ -8,6 +8,7 @@
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="apple-mobile-web-app-title" content="Movement Snacks" />
+
   <meta
     name="description"
     content="Exercise karaoke. Pick 3, 6 or 9 minutes. Keep moving until the music stops."
@@ -32,17 +33,32 @@
       --max:1040px;
     }
 
-    * { box-sizing:border-box; }
+    * {
+      box-sizing:border-box;
+    }
 
-    html { scroll-behavior:smooth; }
+    html {
+      scroll-behavior:smooth;
+    }
 
     body {
       margin:0;
-      font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,
-        "Segoe UI",sans-serif;
+      font-family:
+        Inter,
+        ui-sans-serif,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
       background:
-        radial-gradient(circle at 90% 0%, rgba(216,255,82,.28), transparent 28rem),
+        radial-gradient(
+          circle at 90% 0%,
+          rgba(216,255,82,.28),
+          transparent 28rem
+        ),
         var(--bg);
+
       color:var(--ink);
       line-height:1.5;
       -webkit-font-smoothing:antialiased;
@@ -84,6 +100,7 @@
       font-weight:800;
       letter-spacing:.08em;
       text-transform:uppercase;
+      white-space:nowrap;
     }
 
     main {
@@ -92,7 +109,7 @@
 
     .hero {
       max-width:900px;
-      padding:20px 0 68px;
+      padding:20px 0 62px;
     }
 
     .eyebrow {
@@ -112,6 +129,7 @@
 
     .hero p {
       max-width:700px;
+      margin-bottom:0;
       font-size:clamp(1.15rem,2.3vw,1.45rem);
       color:var(--muted);
     }
@@ -121,7 +139,7 @@
     }
 
     .duration-title {
-      margin:0 0 18px;
+      margin:0 0 14px;
       font-size:1rem;
       font-weight:900;
     }
@@ -138,10 +156,13 @@
       border:1px solid var(--line);
       background:rgba(255,255,255,.6);
       border-radius:22px;
-      padding:22px 16px;
+      padding:18px 16px;
       text-align:left;
       cursor:pointer;
-      transition:.18s ease;
+      transition:
+        transform .18s ease,
+        background .18s ease,
+        border-color .18s ease;
     }
 
     .duration:hover {
@@ -361,23 +382,39 @@
     }
 
     @media(max-width:650px) {
-      main { padding-top:25px; }
 
-      .hero { padding-bottom:50px; }
+      main {
+        padding-top:25px;
+      }
+
+      .hero {
+        padding-bottom:42px;
+      }
 
       .durations {
         grid-template-columns:1fr;
+        gap:8px;
+        margin-bottom:18px;
       }
 
       .duration {
+        min-height:72px;
+        padding:12px 16px;
         display:flex;
         justify-content:space-between;
-        align-items:end;
+        align-items:center;
+        border-radius:18px;
+      }
+
+      .duration strong {
+        font-size:2.15rem;
       }
 
       .duration span {
-        max-width:150px;
+        max-width:190px;
+        margin-top:0;
         text-align:right;
+        font-size:.9rem;
       }
 
       .controls {
@@ -397,6 +434,24 @@
         flex-direction:column;
       }
     }
+
+    @media(max-width:390px) {
+
+      .brand {
+        font-size:.96rem;
+      }
+
+      .mini {
+        padding:6px 9px;
+        font-size:.65rem;
+      }
+
+      .duration span {
+        max-width:160px;
+        font-size:.84rem;
+      }
+    }
+
   </style>
 </head>
 
@@ -413,52 +468,86 @@
   <div class="shell">
 
     <section class="hero">
-      <div class="eyebrow">Three songs. Nine minutes. That's plenty.</div>
 
-      <h1>Move like nobody's watching.</h1>
+      <div class="eyebrow">
+        Three songs. Nine minutes. That's plenty.
+      </div>
+
+      <h1>
+        Move like nobody's watching.
+      </h1>
 
       <p>
         No workouts. No reps. No perfect form.
-        Pick <strong>3, 6 or 9 minutes</strong>,
-        press play and keep moving until the music stops.
+        Pick <strong>3, 6 or 9 minutes.</strong>
+        Press play. Keep moving until the music stops.
       </p>
+
     </section>
 
     <section>
 
-      <p class="duration-title">How much have you got?</p>
+      <p class="duration-title">
+        How much have you got?
+      </p>
 
       <div class="durations">
-        <button class="duration active" data-tracks="1">
+
+        <button
+          class="duration active"
+          type="button"
+          data-tracks="1"
+        >
           <strong>3</strong>
-          <span>One song. Wake everything up.</span>
+          <span>Wake everything up.</span>
         </button>
 
-        <button class="duration" data-tracks="2">
+        <button
+          class="duration"
+          type="button"
+          data-tracks="2"
+        >
           <strong>6</strong>
-          <span>Two songs. Find your flow.</span>
+          <span>Find your flow.</span>
         </button>
 
-        <button class="duration" data-tracks="3">
+        <button
+          class="duration"
+          type="button"
+          data-tracks="3"
+        >
           <strong>9</strong>
-          <span>The whole journey. Come home slowly.</span>
+          <span>The whole journey.</span>
         </button>
+
       </div>
 
       <div class="player">
 
-        <div class="now-label">Now playing</div>
+        <div class="now-label">
+          Now playing
+        </div>
 
-        <span class="track-number" id="trackNumber">01 / 01</span>
+        <span
+          class="track-number"
+          id="trackNumber"
+        >
+          01 / 01
+        </span>
 
-        <h2 id="trackTitle">Move Like an Idiot</h2>
+        <h2 id="trackTitle">
+          Move Like an Idiot
+        </h2>
 
         <p id="trackThought">
           Stop exercising. Start moving.
         </p>
 
         <div class="progress-wrap">
-          <div class="progress" id="progress"></div>
+          <div
+            class="progress"
+            id="progress"
+          ></div>
         </div>
 
         <div class="times">
@@ -467,22 +556,48 @@
         </div>
 
         <div class="controls">
-          <button class="play" id="playButton">▶ Move now</button>
-          <button class="skip" id="skipButton">Next →</button>
+
+          <button
+            class="play"
+            id="playButton"
+            type="button"
+          >
+            ▶ Move now
+          </button>
+
+          <button
+            class="skip"
+            id="skipButton"
+            type="button"
+          >
+            Next →
+          </button>
+
         </div>
 
-        <div class="playlist" id="playlist"></div>
+        <div
+          class="playlist"
+          id="playlist"
+        ></div>
 
-        <audio id="audio" preload="metadata"></audio>
+        <audio
+          id="audio"
+          preload="metadata"
+        ></audio>
 
       </div>
+
     </section>
 
     <section class="manifesto">
 
-      <div class="eyebrow">The complicated methodology</div>
+      <div class="eyebrow">
+        The complicated methodology
+      </div>
 
-      <h2>Don't stop moving until the song stops.</h2>
+      <h2>
+        Don't stop moving until the song stops.
+      </h2>
 
       <div class="rules">
 
@@ -518,63 +633,105 @@
 </main>
 
 <footer>
+
   <div class="shell footer-row">
-    <strong>Movement Snacks</strong>
-    <span>Move. Laugh. Repeat.</span>
-    <span>© <span id="year"></span></span>
+
+    <strong>
+      Movement Snacks
+    </strong>
+
+    <span>
+      Move. Laugh. Repeat.
+    </span>
+
+    <span>
+      © <span id="year"></span>
+    </span>
+
   </div>
+
 </footer>
 
 <script>
 
 const tracks = [
+
   {
     title: "Move Like an Idiot",
     file: "audio/move-like-an-idiot.mp3",
     type: "ENERGY",
     thought: "Stop exercising. Start moving."
   },
+
   {
     title: "Wobble With Purpose",
     file: "audio/wobble-with-purpose.mp3",
     type: "PLAY",
     thought: "Lost the movement? Make one up."
   },
+
   {
     title: "Move Me Slowly",
     file: "audio/move-me-slowly.mp3",
     type: "RETURN",
     thought: "Nothing to conquer. Nothing to beat."
   }
+
 ];
 
 let chosenTrackCount = 1;
 let currentTrack = 0;
 let playing = false;
 
-const audio = document.getElementById("audio");
-const playButton = document.getElementById("playButton");
-const skipButton = document.getElementById("skipButton");
+const audio =
+  document.getElementById("audio");
 
-const trackTitle = document.getElementById("trackTitle");
-const trackThought = document.getElementById("trackThought");
-const trackNumber = document.getElementById("trackNumber");
+const playButton =
+  document.getElementById("playButton");
 
-const progress = document.getElementById("progress");
-const currentTime = document.getElementById("currentTime");
-const durationTime = document.getElementById("durationTime");
-const playlist = document.getElementById("playlist");
+const skipButton =
+  document.getElementById("skipButton");
+
+const trackTitle =
+  document.getElementById("trackTitle");
+
+const trackThought =
+  document.getElementById("trackThought");
+
+const trackNumber =
+  document.getElementById("trackNumber");
+
+const progress =
+  document.getElementById("progress");
+
+const currentTime =
+  document.getElementById("currentTime");
+
+const durationTime =
+  document.getElementById("durationTime");
+
+const playlist =
+  document.getElementById("playlist");
+
 
 function formatTime(seconds) {
-  if (!Number.isFinite(seconds)) return "0:00";
 
-  const mins = Math.floor(seconds / 60);
-  const secs = Math.floor(seconds % 60)
-    .toString()
-    .padStart(2, "0");
+  if (!Number.isFinite(seconds)) {
+    return "0:00";
+  }
+
+  const mins =
+    Math.floor(seconds / 60);
+
+  const secs =
+    Math.floor(seconds % 60)
+      .toString()
+      .padStart(2, "0");
 
   return `${mins}:${secs}`;
+
 }
+
 
 function drawPlaylist() {
 
@@ -582,8 +739,11 @@ function drawPlaylist() {
 
   tracks.forEach((track, index) => {
 
-    const row = document.createElement("div");
-    row.className = "playlist-row";
+    const row =
+      document.createElement("div");
+
+    row.className =
+      "playlist-row";
 
     if (index < chosenTrackCount) {
       row.classList.add("included");
@@ -594,144 +754,252 @@ function drawPlaylist() {
     }
 
     row.innerHTML = `
+
       <div class="playlist-index">
         ${String(index + 1).padStart(2, "0")}
       </div>
 
       <div>
-        <div class="playlist-title">${track.title}</div>
-        <div class="playlist-type">${track.type}</div>
+
+        <div class="playlist-title">
+          ${track.title}
+        </div>
+
+        <div class="playlist-type">
+          ${track.type}
+        </div>
+
       </div>
 
       <div>
         ${index < chosenTrackCount ? "✓" : ""}
       </div>
+
     `;
 
     playlist.appendChild(row);
+
   });
+
 }
+
 
 function loadTrack(index) {
 
   currentTrack = index;
 
-  const track = tracks[index];
+  const track =
+    tracks[index];
 
-  audio.src = track.file;
+  audio.src =
+    track.file;
 
-  trackTitle.textContent = track.title;
-  trackThought.textContent = track.thought;
+  trackTitle.textContent =
+    track.title;
+
+  trackThought.textContent =
+    track.thought;
 
   trackNumber.textContent =
     `${String(index + 1).padStart(2, "0")} / ` +
     `${String(chosenTrackCount).padStart(2, "0")}`;
 
-  progress.style.width = "0%";
-  currentTime.textContent = "0:00";
-  durationTime.textContent = "3:00";
+  progress.style.width =
+    "0%";
+
+  currentTime.textContent =
+    "0:00";
+
+  durationTime.textContent =
+    "3:00";
 
   drawPlaylist();
+
 }
+
 
 async function playCurrentTrack() {
 
   try {
+
     await audio.play();
+
     playing = true;
-    playButton.textContent = "❚❚ Pause";
+
+    playButton.textContent =
+      "❚❚ Pause";
+
   } catch (err) {
+
     console.error(err);
+
   }
+
 }
+
 
 function pauseTrack() {
+
   audio.pause();
+
   playing = false;
-  playButton.textContent = "▶ Keep moving";
+
+  playButton.textContent =
+    "▶ Keep moving";
+
 }
 
-playButton.addEventListener("click", async () => {
 
-  if (playing) {
-    pauseTrack();
-  } else {
-    await playCurrentTrack();
-  }
+playButton.addEventListener(
+  "click",
+  async () => {
 
-});
+    if (playing) {
 
-skipButton.addEventListener("click", async () => {
+      pauseTrack();
 
-  if (currentTrack < chosenTrackCount - 1) {
-    loadTrack(currentTrack + 1);
-    await playCurrentTrack();
-  }
+    } else {
 
-});
+      await playCurrentTrack();
 
-audio.addEventListener("loadedmetadata", () => {
-  durationTime.textContent = formatTime(audio.duration);
-});
-
-audio.addEventListener("timeupdate", () => {
-
-  if (!audio.duration) return;
-
-  const percentage =
-    (audio.currentTime / audio.duration) * 100;
-
-  progress.style.width = `${percentage}%`;
-
-  currentTime.textContent =
-    formatTime(audio.currentTime);
-});
-
-audio.addEventListener("ended", async () => {
-
-  if (currentTrack < chosenTrackCount - 1) {
-
-    loadTrack(currentTrack + 1);
-    await playCurrentTrack();
-
-  } else {
-
-    playing = false;
-    playButton.textContent = "↻ Again";
-
-    trackThought.textContent =
-      "You're here. You're moving. That's enough.";
+    }
 
   }
+);
 
-});
 
-document.querySelectorAll(".duration").forEach(button => {
+skipButton.addEventListener(
+  "click",
+  async () => {
 
-  button.addEventListener("click", () => {
+    if (
+      currentTrack <
+      chosenTrackCount - 1
+    ) {
 
-    document
-      .querySelectorAll(".duration")
-      .forEach(btn => btn.classList.remove("active"));
+      loadTrack(
+        currentTrack + 1
+      );
 
-    button.classList.add("active");
+      await playCurrentTrack();
 
-    chosenTrackCount =
-      Number(button.dataset.tracks);
+    }
 
-    audio.pause();
+  }
+);
 
-    playing = false;
 
-    playButton.textContent = "▶ Move now";
+audio.addEventListener(
+  "loadedmetadata",
+  () => {
 
-    loadTrack(0);
+    durationTime.textContent =
+      formatTime(audio.duration);
+
+  }
+);
+
+
+audio.addEventListener(
+  "timeupdate",
+  () => {
+
+    if (!audio.duration) {
+      return;
+    }
+
+    const percentage =
+      (
+        audio.currentTime /
+        audio.duration
+      ) * 100;
+
+    progress.style.width =
+      `${percentage}%`;
+
+    currentTime.textContent =
+      formatTime(
+        audio.currentTime
+      );
+
+  }
+);
+
+
+audio.addEventListener(
+  "ended",
+  async () => {
+
+    if (
+      currentTrack <
+      chosenTrackCount - 1
+    ) {
+
+      loadTrack(
+        currentTrack + 1
+      );
+
+      await playCurrentTrack();
+
+    } else {
+
+      playing = false;
+
+      playButton.textContent =
+        "↻ Again";
+
+      trackThought.textContent =
+        "You're here. You're moving. That's enough.";
+
+    }
+
+  }
+);
+
+
+document
+  .querySelectorAll(".duration")
+  .forEach(button => {
+
+    button.addEventListener(
+      "click",
+      () => {
+
+        document
+          .querySelectorAll(".duration")
+          .forEach(btn =>
+            btn.classList.remove("active")
+          );
+
+        button
+          .classList
+          .add("active");
+
+        chosenTrackCount =
+          Number(
+            button.dataset.tracks
+          );
+
+        audio.pause();
+
+        playing = false;
+
+        playButton.textContent =
+          "▶ Move now";
+
+        loadTrack(0);
+
+      }
+    );
+
   });
 
-});
 
-document.getElementById("year").textContent =
+document
+  .getElementById("year")
+  .textContent =
   new Date().getFullYear();
+
 
 loadTrack(0);
 
