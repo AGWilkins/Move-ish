@@ -142,7 +142,7 @@
 
     .journeys {
       display:grid;
-      grid-template-columns:repeat(3,1fr);
+      grid-template-columns:repeat(4,1fr);
       gap:12px;
       margin-bottom:24px;
     }
@@ -641,7 +641,12 @@
           <strong>CAN'T BE ARSED</strong>
           <span>Start badly.</span>
         </button>
-
+        
+<button class="journey" type="button" data-journey="desk">
+  <span class="journey-number">04</span>
+  <strong>DESK ESCAPE</strong>
+  <span>Unfold me.</span>
+</button>
       </div>
 
       <p class="choice-title">How much have you got?</p>
@@ -814,7 +819,7 @@ const journeys = {
     ]
   },
 
-  cant: {
+   cant: {
     name: "CAN'T BE ARSED",
     finish: "Better than before? A bit? That'll do.",
     tracks: [
@@ -835,6 +840,31 @@ const journeys = {
         file: "audio/better-than-before.mp3",
         type: "ENOUGH",
         thought: "No transformation. Just notice what changed."
+      }
+    ]
+  },
+
+  desk: {
+    name: "DESK ESCAPE",
+    finish: "A little less chair. A little more you.",
+    tracks: [
+      {
+        title: "Unfold Yourself",
+        file: "audio/unfold-yourself.mp3",
+        type: "UNSTICK",
+        thought: "Your body didn't forget. It was waiting its turn."
+      },
+      {
+        title: "Escape the Chair",
+        file: "audio/escape-the-chair.mp3",
+        type: "PLAY",
+        thought: "Your professionalism is deteriorating. Keep going."
+      },
+      {
+        title: "Back in Your Body",
+        file: "audio/back-in-your-body.mp3",
+        type: "RESET",
+        thought: "A little less chair. A little more you."
       }
     ]
   }
