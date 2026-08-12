@@ -140,58 +140,71 @@
       font-weight:900;
     }
 
-    .journeys {
-      display:grid;
-      grid-template-columns:repeat(4,1fr);
-      gap:12px;
-      margin-bottom:24px;
-    }
+.journeys {
+  display:flex;
+  gap:8px;
+  margin-bottom:18px;
+  overflow-x:auto;
+  scroll-snap-type:x proximity;
+  scrollbar-width:none;
+  padding-bottom:2px;
+}
 
-    .journey {
-      appearance:none;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.62);
-      border-radius:22px;
-      padding:18px;
-      text-align:left;
-      cursor:pointer;
-      transition:
-        transform .18s ease,
-        background .18s ease,
-        border-color .18s ease;
-    }
+.journeys::-webkit-scrollbar {
+  display:none;
+}
 
-    .journey:hover {
-      transform:translateY(-2px);
-    }
+.journey {
+  appearance:none;
+  flex:1 1 0;
+  min-width:150px;
+  border:1px solid var(--line);
+  background:rgba(255,255,255,.62);
+  border-radius:16px;
+  padding:11px 12px;
+  text-align:left;
+  cursor:pointer;
+  scroll-snap-align:start;
 
-    .journey.active {
-      background:var(--acid);
-      border-color:transparent;
-    }
+  transition:
+    transform .18s ease,
+    background .18s ease,
+    border-color .18s ease;
+}
 
-    .journey-number {
-      display:block;
-      margin-bottom:22px;
-      font-size:.72rem;
-      font-weight:900;
-      letter-spacing:.10em;
-      color:var(--muted);
-    }
+.journey:hover {
+  transform:translateY(-2px);
+}
 
-    .journey strong {
-      display:block;
-      font-size:1.5rem;
-      line-height:1;
-      letter-spacing:-.045em;
-    }
+.journey.active {
+  background:var(--acid);
+  border-color:transparent;
+}
 
-    .journey span:last-child {
-      display:block;
-      margin-top:7px;
-      color:var(--muted);
-      font-size:.88rem;
-    }
+.journey-number {
+  display:block;
+  margin-bottom:8px;
+  font-size:.64rem;
+  font-weight:900;
+  letter-spacing:.10em;
+  color:var(--muted);
+}
+
+.journey strong {
+  display:block;
+  font-size:1.05rem;
+  line-height:1;
+  letter-spacing:-.035em;
+}
+
+.journey span:last-child {
+  display:block;
+  margin-top:4px;
+  color:var(--muted);
+  font-size:.76rem;
+}
+
+
 
     .duration-row {
       display:grid;
@@ -496,29 +509,37 @@
     font-size:.9rem;
   }
 
-  .journeys {
-    gap:8px;
-    margin-bottom:14px;
-  }
+ .journeys {
+  display:flex;
+  gap:7px;
+  overflow-x:auto;
+  scroll-snap-type:x mandatory;
+  margin-right:-15px;
+  padding-right:15px;
+  margin-bottom:18px;
+}
 
-  .journey {
-    padding:12px 14px;
-    border-radius:16px;
-  }
+.journey {
+  flex:0 0 72%;
+  min-width:0;
+  display:block;
+  padding:12px 14px;
+  border-radius:17px;
+}
 
-  .journey-number {
-    margin-bottom:10px;
-    font-size:.66rem;
-  }
+.journey-number {
+  margin:0 0 7px;
+  font-size:.68rem;
+}
 
-  .journey strong {
-    font-size:1.15rem;
-  }
+.journey strong {
+  font-size:1.15rem;
+}
 
-  .journey span:last-child {
-    margin-top:4px;
-    font-size:.78rem;
-  }
+.journey span:last-child {
+  margin-top:4px;
+  font-size:.82rem;
+}
 
   .duration-row {
     gap:6px;
@@ -801,32 +822,39 @@
 
       <p class="choice-title">What do you need?</p>
 
-      <div class="journeys">
+    <div class="journeys">
 
-        <button class="journey active" type="button" data-journey="move">
-          <span class="journey-number">01</span>
-          <strong>MOVE</strong>
-          <span>Wake me up.</span>
-        </button>
+  <button class="journey active" type="button" data-journey="move">
+    <span class="journey-number">01</span>
+    <strong>MOVE</strong>
+    <span>Wake me up.</span>
+  </button>
 
-        <button class="journey" type="button" data-journey="letgo">
-          <span class="journey-number">02</span>
-          <strong>LET GO</strong>
-          <span>Shake off the day.</span>
-        </button>
+  <button class="journey" type="button" data-journey="letgo">
+    <span class="journey-number">02</span>
+    <strong>LET GO</strong>
+    <span>Shake off the day.</span>
+  </button>
 
-        <button class="journey" type="button" data-journey="cant">
-          <span class="journey-number">03</span>
-          <strong>CAN'T BE ARSED</strong>
-          <span>Start badly.</span>
-        </button>
-        
-<button class="journey" type="button" data-journey="desk">
-  <span class="journey-number">04</span>
-  <strong>DESK ESCAPE</strong>
-  <span>Unfold me.</span>
-</button>
-      </div>
+  <button class="journey" type="button" data-journey="cant">
+    <span class="journey-number">03</span>
+    <strong>CAN'T BE ARSED</strong>
+    <span>Start badly.</span>
+  </button>
+
+  <button class="journey" type="button" data-journey="desk">
+    <span class="journey-number">04</span>
+    <strong>DESK ESCAPE</strong>
+    <span>Unfold me.</span>
+  </button>
+
+  <button class="journey" type="button" data-journey="badmood">
+    <span class="journey-number">05</span>
+    <strong>BAD MOOD</strong>
+    <span>Remain annoyed.</span>
+  </button>
+
+</div>
 
       <p class="choice-title">How much have you got?</p>
 
@@ -1046,7 +1074,32 @@ const journeys = {
         thought: "A little less chair. A little more you."
       }
     ]
-  }
+  },
+
+badmood: {
+  name: "BAD MOOD",
+  finish: "Mood status: improved. Cause: inconclusive.",
+  tracks: [
+    {
+      title: "Keep Your Face Like That",
+      file: "audio/keep-your-face-like-that.mp3",
+      type: "GRUMBLE",
+      thought: "You may remain annoyed. Move anyway."
+    },
+    {
+      title: "Malfunction Beautifully",
+      file: "audio/malfunction-beautifully.mp3",
+      type: "DISRUPT",
+      thought: "Movement quality: deteriorating. Excellent."
+    },
+    {
+      title: "Slightly Less Annoyed",
+      file: "audio/slightly-less-annoyed.mp3",
+      type: "RETURN",
+      thought: "Nothing solved. Something shifted."
+    }
+  ]
+}
 };
 
 let activeJourneyKey = "move";
