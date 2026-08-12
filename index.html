@@ -659,6 +659,40 @@
     padding:28px 0 24px;
   }
 }
+    /* Desktop journey selector */
+@media (min-width:651px) {
+
+  .journeys {
+    display:grid;
+    grid-template-columns:repeat(5, 1fr);
+    gap:8px;
+    overflow:visible;
+    margin-bottom:14px;
+  }
+
+  .journey {
+    min-width:0;
+    width:100%;
+    padding:10px 11px;
+    border-radius:13px;
+  }
+
+  .journey-number {
+    margin-bottom:6px;
+    font-size:.58rem;
+  }
+
+  .journey strong {
+    font-size:.88rem;
+    line-height:1.05;
+  }
+
+  .journey span:last-child {
+    margin-top:3px;
+    font-size:.68rem;
+    line-height:1.2;
+  }
+}
     @media(max-width:650px) {
       main {
         padding-top:12px;
@@ -1302,6 +1336,25 @@ document.getElementById("year").textContent =
 
 loadTrack(0);
 </script>
+<div class="completion-modal" id="completionModal">
+  <div class="completion-box">
 
+    <div class="completion-label">
+      JOURNEY COMPLETE
+    </div>
+
+    <div class="completion-verdict" id="completionVerdict"></div>
+
+    <p class="completion-truth">
+      But you moved.<br>
+      <strong>That was the whole idea.</strong>
+    </p>
+
+    <button class="completion-close" id="completionClose">
+      I'VE DONE PLENTY
+    </button>
+
+  </div>
+</div>
 </body>
 </html>
