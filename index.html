@@ -203,7 +203,61 @@
   color:var(--muted);
   font-size:.76rem;
 }
+.completion-modal {
+  position:fixed;
+  inset:0;
+  z-index:9999;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:24px;
+  background:rgba(10,15,13,.72);
+  backdrop-filter:blur(8px);
+}
 
+.completion-modal.show {
+  display:flex;
+}
+
+.completion-box {
+  width:min(520px, 100%);
+  background:var(--acid);
+  border-radius:28px;
+  padding:34px;
+  box-shadow:0 24px 80px rgba(0,0,0,.25);
+}
+
+.completion-label {
+  font-size:.72rem;
+  font-weight:900;
+  letter-spacing:.16em;
+  margin-bottom:22px;
+}
+
+.completion-verdict {
+  font-size:clamp(2rem,5vw,3.4rem);
+  font-weight:900;
+  line-height:.96;
+  letter-spacing:-.055em;
+}
+
+.completion-truth {
+  margin:28px 0;
+  font-size:1.05rem;
+  line-height:1.45;
+}
+
+.completion-close {
+  appearance:none;
+  border:0;
+  background:#0d1411;
+  color:white;
+  border-radius:999px;
+  padding:15px 22px;
+  font:inherit;
+  font-weight:900;
+  cursor:pointer;
+}
 
 
     .duration-row {
@@ -1335,6 +1389,41 @@ document.getElementById("year").textContent =
   new Date().getFullYear();
 
 loadTrack(0);
+  const completionVerdicts = [
+  "You burned approximately 4,700 calories. Legal says probably not.",
+
+  "Distance travelled: somewhere between the sofa and Belgium.",
+
+  "Fitness increased by 14%. Source: vibes.",
+
+  "Your professionalism has deteriorated. Your mobility has improved.",
+
+  "Three songs completed. Olympic selection remains unlikely.",
+
+  "You are now technically an athlete. Please don't quote us.",
+
+  "Calories burned: some. Dignity burned: considerably more.",
+
+  "Nothing has been optimised. Excellent.",
+
+  "You just ran the equivalent of the English Channel. Maybe. We're not very good with the numbers thing.",
+
+  "Health happened. We have insufficient data to be more specific."
+];
+
+function showCompletion() {
+  const verdict =
+    completionVerdicts[
+      Math.floor(Math.random() * completionVerdicts.length)
+    ];
+
+  document.getElementById("completionVerdict").textContent = verdict;
+  document.getElementById("completionModal").classList.add("show");
+}
+
+document.getElementById("completionClose").addEventListener("click", () => {
+  document.getElementById("completionModal").classList.remove("show");
+});
 </script>
 <div class="completion-modal" id="completionModal">
   <div class="completion-box">
