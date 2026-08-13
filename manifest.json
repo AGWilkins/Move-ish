@@ -1,0 +1,22 @@
+{
+  "name": "Move-ish",
+  "short_name": "Move-ish",
+  "description": "Music for people with bodies. Pick what you need, choose 3, 6 or 9-ish minutes, press play and move.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f4f1e8",
+  "theme_color": "#101514",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
