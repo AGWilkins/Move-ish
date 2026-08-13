@@ -638,10 +638,13 @@ footer {
 
   /* Hero */
 
-  .hero {
-    max-width:none;
-    padding:12px 0 34px;
-  }
+.hero {
+  max-width:none;
+  padding:
+    calc(12px + env(safe-area-inset-top))
+    0
+    34px;
+}
 
   .eyebrow {
     font-size:.78rem;
