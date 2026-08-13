@@ -1061,7 +1061,26 @@
     <span>© <span id="year"></span></span>
   </div>
 </footer>
+<div class="completion-modal" id="completionModal">
+  <div class="completion-box">
 
+    <div class="completion-label">
+      JOURNEY COMPLETE
+    </div>
+
+    <div class="completion-verdict" id="completionVerdict"></div>
+
+    <p class="completion-truth">
+      But you moved.<br>
+      <strong>That was the whole idea.</strong>
+    </p>
+
+    <button class="completion-close" id="completionClose">
+      I'VE DONE PLENTY
+    </button>
+
+  </div>
+</div>
 <script>
 const journeys = {
   move: {
@@ -1427,25 +1446,6 @@ document.getElementById("completionClose").addEventListener("click", () => {
   document.getElementById("completionModal").classList.remove("show");
 });
 </script>
-<div class="completion-modal" id="completionModal">
-  <div class="completion-box">
 
-    <div class="completion-label">
-      JOURNEY COMPLETE
-    </div>
-
-    <div class="completion-verdict" id="completionVerdict"></div>
-
-    <p class="completion-truth">
-      But you moved.<br>
-      <strong>That was the whole idea.</strong>
-    </p>
-
-    <button class="completion-close" id="completionClose">
-      I'VE DONE PLENTY
-    </button>
-
-  </div>
-</div>
 </body>
 </html>
