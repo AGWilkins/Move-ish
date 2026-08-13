@@ -1208,7 +1208,164 @@
     font-size:2rem;
     line-height:.95;
   }
+/* ===== EVEN MORE COMPACT DESKTOP ===== */
 
+@media (min-width:651px) {
+
+  :root {
+    --max: 860px;
+  }
+
+  .shell {
+    width:min(calc(100% - 48px), 860px);
+  }
+
+  /* Hero */
+  .hero {
+    max-width:650px;
+    padding-bottom:14px;
+  }
+
+  .hero-title {
+    font-size:2.55rem;
+    margin:6px 0 8px;
+  }
+
+  .hero p {
+    max-width:600px;
+    font-size:.82rem;
+    line-height:1.35;
+  }
+
+  /* Choice area */
+  .choice-title {
+    font-size:.74rem;
+  }
+
+  .journey {
+    padding:7px 8px;
+  }
+
+  .journey strong {
+    font-size:.72rem;
+  }
+
+  .journey span:last-child {
+    font-size:.58rem;
+  }
+
+  .duration {
+    min-height:34px;
+  }
+
+  .duration strong {
+    font-size:1.05rem;
+  }
+
+  .duration span,
+  .ish {
+    font-size:.6rem;
+  }
+
+  /* Player */
+  .player {
+    padding:12px 14px;
+  }
+
+  .player h2 {
+    font-size:1.75rem;
+  }
+
+  #trackThought {
+    font-size:.7rem;
+  }
+
+  .play,
+  .skip {
+    padding:7px 11px;
+    font-size:.7rem;
+  }
+
+  .playlist-row {
+    padding:4px 0;
+  }
+
+  .playlist-title {
+    font-size:.7rem;
+  }
+
+  /* Methodology */
+  .manifesto {
+    padding-top:20px;
+  }
+
+  .manifesto h2 {
+    font-size:1.8rem;
+    margin-bottom:8px;
+  }
+
+  .rule {
+    padding:8px 9px;
+  }
+
+  .rule strong {
+    font-size:.7rem;
+  }
+
+  .rule p {
+    font-size:.61rem;
+  }
+
+  .quote {
+    margin-top:12px;
+    padding:14px 18px;
+    font-size:1.65rem;
+  }
+
+  /* Clarity Cycle */
+  .clarity-origin {
+    padding:16px 0 0;
+  }
+
+  .clarity-origin-inner {
+    max-width:520px;
+    padding:14px 0;
+  }
+
+  .clarity-kicker {
+    margin-bottom:5px;
+    font-size:.5rem;
+  }
+
+  .clarity-origin h2 {
+    margin-bottom:8px;
+    font-size:1.65rem;
+  }
+
+  .clarity-origin p {
+    max-width:510px;
+    margin-bottom:6px;
+    font-size:.69rem;
+    line-height:1.38;
+  }
+
+  .clarity-origin .clarity-result {
+    margin-top:10px;
+  }
+
+  .clarity-origin .clarity-punch {
+    font-size:.76rem;
+  }
+
+  .clarity-link {
+    margin-top:6px;
+    font-size:.72rem;
+  }
+
+  footer {
+    padding:15px 0;
+  }
+}
   /* CLARITY CYCLE ORIGIN */
   .clarity-origin {
     padding:24px 0 4px;
@@ -1437,6 +1594,7 @@
 
   </div>
  <section class="clarity-origin">
+   <div class="shell">
   <div class="clarity-origin-inner">
 
     <span class="clarity-kicker">WHERE DID THIS COME FROM?</span>
@@ -1482,6 +1640,7 @@
     </a>
 
   </div>
+   </div>
 </section>
 </main>
 
