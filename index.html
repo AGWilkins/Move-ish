@@ -871,7 +871,21 @@
         font-size:1.08rem;
         line-height:1.48;
       }
+@media (min-width:651px) {
+  .hero {
+    padding-bottom:10px;
+  }
 
+  .hero-title {
+    font-size:2.35rem;
+    margin-bottom:6px;
+  }
+
+  .hero p {
+    font-size:.76rem;
+    margin-bottom:0;
+  }
+}
       .journeys {
         grid-template-columns:1fr;
         gap:7px;
@@ -1321,7 +1335,77 @@
     padding:14px 18px;
     font-size:1.65rem;
   }
+@media (min-width:651px) {
 
+  /* Compress selector zone */
+  .choice-section {
+    margin-bottom:6px;
+  }
+
+  .choice-title {
+    margin-bottom:4px;
+    font-size:.66rem;
+    line-height:1;
+  }
+
+  .journeys {
+    gap:4px;
+    margin-bottom:7px;
+  }
+
+  .journey {
+    padding:5px 7px;
+    border-radius:9px;
+  }
+
+  .journey-number {
+    margin-bottom:2px;
+    font-size:.46rem;
+    line-height:1;
+  }
+
+  .journey strong {
+    font-size:.65rem;
+    line-height:1;
+  }
+
+  .journey span:last-child {
+    margin-top:2px;
+    font-size:.50rem;
+    line-height:1.1;
+  }
+
+  /* Compress 3 / 6 / 9 */
+  .duration-row {
+    gap:4px;
+  }
+
+  .duration {
+    min-height:28px;
+    padding:3px 8px;
+    border-radius:8px;
+  }
+
+  .duration strong {
+    font-size:.92rem;
+    line-height:1;
+  }
+
+  .duration span {
+    font-size:.54rem;
+  }
+
+  .ish {
+    margin-top:3px;
+    font-size:.54rem;
+    line-height:1.2;
+  }
+
+  /* Pull player upward */
+  .player {
+    margin-top:6px;
+  }
+}
   /* Clarity Cycle */
   .clarity-origin {
     padding:16px 0 0;
