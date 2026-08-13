@@ -974,6 +974,292 @@
         font-size:.65rem;
       }
     }
+    /* ==================================================
+   MOVE-ISH — COMPACT DESKTOP
+   Mobile remains untouched
+   ================================================== */
+
+@media (min-width:651px) {
+
+  /* Overall page width */
+  :root {
+    --max: 920px;
+  }
+
+  .shell {
+    width:min(calc(100% - 48px), 920px);
+  }
+
+  /* Header */
+  header {
+    padding:12px 0 10px;
+  }
+
+  .brand {
+    font-size:.9rem;
+  }
+
+  .mini {
+    padding:5px 9px;
+    font-size:.62rem;
+  }
+
+  /* Main page */
+  main {
+    padding:12px 0 36px;
+  }
+
+  /* HERO */
+  .hero {
+    max-width:720px;
+    padding:4px 0 20px;
+  }
+
+  .eyebrow {
+    font-size:.64rem;
+    letter-spacing:.14em;
+  }
+
+  .hero-title {
+    margin:8px 0 10px;
+    font-size:3rem;
+    line-height:.88;
+    letter-spacing:-.065em;
+  }
+
+  .hero p {
+    max-width:650px;
+    font-size:.92rem;
+    line-height:1.4;
+  }
+
+  /* JOURNEY + TIME SELECTORS */
+  .choice-section {
+    margin-bottom:10px;
+  }
+
+  .choice-title {
+    margin-bottom:6px;
+    font-size:.82rem;
+  }
+
+  .journeys {
+    gap:6px;
+    margin-bottom:10px;
+  }
+
+  .journey {
+    padding:8px 9px;
+    border-radius:12px;
+  }
+
+  .journey-number {
+    margin-bottom:4px;
+    font-size:.54rem;
+  }
+
+  .journey strong {
+    font-size:.78rem;
+  }
+
+  .journey span:last-child {
+    margin-top:2px;
+    font-size:.62rem;
+  }
+
+  .duration-row {
+    gap:5px;
+  }
+
+  .duration {
+    min-height:38px;
+    padding:6px 10px;
+    border-radius:11px;
+  }
+
+  .duration strong {
+    font-size:1.2rem;
+  }
+
+  .duration span {
+    font-size:.66rem;
+  }
+
+  .ish {
+    margin-top:4px;
+    font-size:.66rem;
+  }
+
+  /* PLAYER */
+  .player {
+    border-radius:18px;
+    padding:14px 16px;
+    box-shadow:0 16px 38px rgba(16,21,20,.15);
+  }
+
+  .now-label {
+    font-size:.58rem;
+  }
+
+  .journey-pill {
+    padding:4px 7px;
+    font-size:.54rem;
+  }
+
+  .track-number {
+    margin-top:7px;
+    padding:3px 7px;
+    font-size:.58rem;
+  }
+
+  .player h2 {
+    margin:5px 0 3px;
+    max-width:650px;
+    font-size:2rem;
+    line-height:.94;
+  }
+
+  #trackThought {
+    font-size:.78rem;
+  }
+
+  .progress-wrap {
+    height:4px;
+    margin:11px 0 5px;
+  }
+
+  .times {
+    font-size:.66rem;
+  }
+
+  .controls {
+    margin-top:8px;
+  }
+
+  .play,
+  .skip {
+    padding:8px 13px;
+    font-size:.76rem;
+  }
+
+  .play {
+    min-width:145px;
+  }
+
+  .playlist {
+    margin-top:6px;
+  }
+
+  .playlist-row {
+    grid-template-columns:28px 1fr auto;
+    padding:5px 0;
+  }
+
+  .playlist-index {
+    font-size:.65rem;
+  }
+
+  .playlist-title {
+    font-size:.75rem;
+  }
+
+  .playlist-type {
+    font-size:.56rem;
+  }
+
+  /* METHODOLOGY */
+  .manifesto {
+    max-width:920px;
+    padding:26px 0 6px;
+  }
+
+  .manifesto h2 {
+    margin:4px 0 10px;
+    max-width:760px;
+    font-size:2.15rem;
+    line-height:.92;
+  }
+
+  .rules {
+    grid-template-columns:repeat(4,1fr);
+    gap:5px;
+    margin-top:10px;
+  }
+
+  .rule {
+    padding:10px 11px;
+    border-radius:12px;
+  }
+
+  .rule strong {
+    font-size:.78rem;
+  }
+
+  .rule p {
+    margin-top:2px;
+    font-size:.68rem;
+    line-height:1.3;
+  }
+
+  .quote {
+    margin-top:16px;
+    padding:17px 20px;
+    border-radius:14px;
+    font-size:2rem;
+    line-height:.95;
+  }
+
+  /* CLARITY CYCLE ORIGIN */
+  .clarity-origin {
+    padding:24px 0 4px;
+  }
+
+  .clarity-origin-inner {
+    max-width:620px;
+    padding:18px 0;
+  }
+
+  .clarity-kicker {
+    margin-bottom:7px;
+    font-size:.55rem;
+  }
+
+  .clarity-origin h2 {
+    margin-bottom:10px;
+    font-size:2rem;
+    line-height:.95;
+  }
+
+  .clarity-origin p {
+    max-width:580px;
+    margin-bottom:7px;
+    font-size:.78rem;
+    line-height:1.42;
+  }
+
+  .clarity-origin .clarity-result {
+    margin-top:14px;
+  }
+
+  .clarity-origin .clarity-punch {
+    font-size:.86rem;
+  }
+
+  .clarity-link {
+    margin-top:8px;
+    font-size:.82rem;
+  }
+
+  /* FOOTER */
+  footer {
+    padding:20px 0 18px;
+    font-size:.7rem;
+  }
+
+  .footer-row {
+    padding-top:12px;
+  }
+}
   </style>
 </head>
 
