@@ -131,7 +131,7 @@ main {
 
 .journeys {
   display:grid;
-  grid-template-columns:repeat(5,1fr);
+  grid-template-columns:repeat(6,1fr);
   gap:4px;
   margin-bottom:7px;
 }
@@ -1015,6 +1015,12 @@ footer {
     <strong>BAD MOOD</strong>
     <span>Remain annoyed.</span>
   </button>
+    
+<button class="journey" data-journey="stiff">
+  <span class="journey-number">06</span>
+  <strong>STIFF</strong>
+  <span>Something's seized up.</span>
+</button>
 
 </div>
 
@@ -1326,6 +1332,38 @@ badmood: {
       file: "audio/slightly-less-annoyed.mp3",
       type: "RETURN",
       thought: "Nothing solved. Something shifted."
+    }
+  ]
+},
+  stiff: {
+  name: "Stiff",
+
+  finish: [
+    "You are now approximately 4% less furniture.",
+    "Range of motion improved: possibly.",
+    "Something definitely moved.",
+    "Two knees still have opinions of their own.",
+    "Nobody measured anything. Excellent."
+  ],
+
+  tracks: [
+    {
+      title: "Oil the Hinges",
+      file: "audio/oil-the-hinges.mp3",
+      type: "3-ish",
+      thought: "Get the machinery moving."
+    },
+    {
+      title: "That's Probably Looser",
+      file: "audio/thats-probably-looser.mp3",
+      type: "6-ish",
+      thought: "Somebody came in here as furniture."
+    },
+    {
+      title: "Stand By Your Ham",
+      file: "audio/stand-by-your-ham.mp3",
+      type: "9-ish",
+      thought: "You've nothing to prove to a hamstring."
     }
   ]
 }
