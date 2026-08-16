@@ -11,7 +11,7 @@
 
   <meta
     name="description"
-    content="content="Move-ish. Pick what you need, choose 3, 6 or 9-ish minutes, press play and keep moving until the music stops."
+    content="Move-ish. Pick what you need, choose 3, 6 or 9-ish minutes, press play and keep moving until the music stops."
   />
 
   <link rel="manifest" href="manifest.json" />
@@ -131,7 +131,7 @@ main {
 
 .journeys {
   display:grid;
-  grid-template-columns:repeat(6,1fr);
+  grid-template-columns:repeat(7,1fr);
   gap:4px;
   margin-bottom:7px;
 }
@@ -1027,6 +1027,12 @@ footer {
   <span>Something's seized up.</span>
 </button>
 
+<button class="journey" type="button" data-journey="bored">
+  <span class="journey-number">07</span>
+  <strong>BORED</strong>
+  <span>Let's make that difficult.</span>
+</button>
+
 </div>
 
       <p class="choice-title">How much have you got?</p>
@@ -1372,6 +1378,31 @@ badmood: {
       thought: "You've nothing to prove to a hamstring."
     }
   ]
+},
+
+bored: {
+  name: "BORED",
+  finish: "Are you still bored? No? Good. Don't make a thing of it.",
+  tracks: [
+    {
+      title: "Tiny Disco Emergency",
+      file: "audio/tiny-disco-emergency.mp3",
+      type: "3-ish",
+      thought: "Boredom detected. Things have escalated pleasantly."
+    },
+    {
+      title: "Row, You Idiot",
+      file: "audio/row-you-idiot.mp3",
+      type: "6-ish",
+      thought: "No ship. No sea. Row anyway."
+    },
+    {
+      title: "Act Natural",
+      file: "audio/act-natural.mp3",
+      type: "9-ish",
+      thought: "Move like nothing happened."
+    }
+  ]
 }
 };
 
@@ -1399,6 +1430,13 @@ function activeJourney() {
 
 function activeTracks() {
   return activeJourney().tracks;
+}
+
+function activeFinish() {
+  const finish = activeJourney().finish;
+  return Array.isArray(finish)
+    ? finish[Math.floor(Math.random() * finish.length)]
+    : finish;
 }
 
 function formatTime(seconds) {
@@ -1541,7 +1579,7 @@ audio.addEventListener("ended", async () => {
     playing = false;
     finished = true;
     playButton.textContent = "↻ Again";
-    trackThought.textContent = activeJourney().finish;
+    trackThought.textContent = activeFinish();
     updateControls();
     showCompletion();
   }
