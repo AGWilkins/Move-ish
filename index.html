@@ -131,7 +131,7 @@ main {
 
 .journeys {
   display:grid;
-  grid-template-columns:repeat(7,1fr);
+  grid-template-columns:repeat(8,1fr);
   gap:4px;
   margin-bottom:7px;
 }
@@ -1032,7 +1032,12 @@ footer {
   <strong>BORED</strong>
   <span>Let's make that difficult.</span>
 </button>
-
+      
+<button class="journey" type="button" data-journey="knackered">
+  <span class="journey-number">08</span>
+  <strong>KNACKERED</strong>
+  <span>Lower your standards.</span>
+</button>
 </div>
 
       <p class="choice-title">How much have you got?</p>
@@ -1401,6 +1406,30 @@ bored: {
       file: "audio/act-natural.mp3",
       type: "9-ish",
       thought: "Move like nothing happened."
+    }
+  ]
+},
+  knackered: {
+  name: "KNACKERED",
+  finish: "You've done enough. Go sit down.",
+  tracks: [
+    {
+      title: "Lower Your Standards",
+      file: "audio/lower-your-standards.mp3",
+      type: "3-ish",
+      thought: "You're knackered. Fine. Give me one shoulder."
+    },
+    {
+      title: "That'll Do",
+      file: "audio/thatll-do.mp3",
+      type: "6-ish",
+      thought: "Good enough is considerably more than nothing."
+    },
+    {
+      title: "You've Done Enough",
+      file: "audio/youve-done-enough.mp3",
+      type: "9-ish",
+      thought: "You don't have to earn the night."
     }
   ]
 }
